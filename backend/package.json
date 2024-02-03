@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "nodemon server.js",
-    "build" : "npm i"
+    "build" : "npm i",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
