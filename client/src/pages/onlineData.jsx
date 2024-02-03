@@ -29,7 +29,7 @@ export default function onlineData() {
         e.preventDefault(); // Prevents the default form submission behavior
       
         try {
-          const response = await fetch(`/api/new/sms/${orderId}`, {
+          const response = await fetch(`https://capstonebackend-kvk3.onrender.com/api/new/sms/${orderId}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ export default function onlineData() {
     const handleUnArchive = async (orderId) => {
       try {
         // Make a request to your API endpoint with the updated values
-        const response = await axios.put(`api/new/unarchieve/${orderId}`, {
+        const response = await axios.put(`https://capstonebackend-kvk3.onrender.com/api/new/unarchieve/${orderId}`, {
           orderStatus: newOrderStatus, // Use the updated state for orderStatus
           notes: newNotes, // Use the updated state for notes
         });

@@ -22,8 +22,8 @@ const PieComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseOnline = await axios.get('/api/new/today');
-        const responseOnsite = await axios.get('/api/add/today');
+        const responseOnline = await axios.get('https://capstonebackend-kvk3.onrender.com/api/new/today');
+        const responseOnsite = await axios.get('https://capstonebackend-kvk3.onrender.com/api/add/today');
 
         const { count: onlineCount } = responseOnline.data;
         const { count: onsiteCount } = responseOnsite.data;
