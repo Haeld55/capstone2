@@ -28,6 +28,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
+mongoose.set('strictQuery', false)
 
 app.use(cookieParser());
 
@@ -35,14 +36,14 @@ app.listen(3000, () => {
   console.log('Server is running on port 3000!');
 });
 
-app.use('api/user', userRouter);
-app.use('api/auth', authRouter);
-app.use('api/add', addRouter)
-app.use('api/new', userOrderRoute)
-app.use('api/service', serviceRoute)
-app.use('api/product', productRoute)
-app.use('api/star', starRouter)
-app.use('api/gcash', gcashRouter)
+app.use('/api/user', userRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/add', addRouter)
+app.use('/api/new', userOrderRoute)
+app.use('/api/service', serviceRoute)
+app.use('/api/product', productRoute)
+app.use('/api/star', starRouter)
+app.use('/api/gcash', gcashRouter)
 
 
 
