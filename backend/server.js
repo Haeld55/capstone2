@@ -27,13 +27,7 @@ mongoose
 
 const app = express();
 
-app.use(cors(
-  {
-      origin: ["https://capstone2-three.vercel.app/"],
-      methods: ["POST", "GET", "PUT"],
-      credentials: true
-  }
-));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json("Hello");
