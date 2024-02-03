@@ -27,7 +27,18 @@ mongoose
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+  {
+      origin: ["https://capstone2-three.vercel.app/"],
+      methods: ["POST", "GET", "PUT"],
+      credentials: true
+  }
+));
+
+app.get("/", (req, res) => {
+  res.json("Hello");
+})
+
 app.use(express.json());
 
 app.use(cookieParser());
@@ -44,8 +55,6 @@ app.use('/api/service', serviceRoute)
 app.use('/api/product', productRoute)
 app.use('/api/star', starRouter)
 app.use('/api/gcash', gcashRouter)
-
-
 
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
